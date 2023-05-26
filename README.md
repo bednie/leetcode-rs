@@ -1,1 +1,3 @@
-# Rust
+# leetcode-rs
+
+Leetcode in Rust.
