@@ -1,3 +1,3 @@
 # leetcode-rs
 
-Leetcode in Rust.
+Rust practice.
