@@ -31,17 +31,17 @@ impl Solution {
         for i in v {
             match x_rev.checked_mul(10) {
                 None => return 0,
-                Some(_x) => { x_rev *= 10 }
+                Some(_x) => x_rev *= 10,
             }
             match x_rev.checked_add(i) {
                 None => return 0,
-                Some(_x) => { x_rev += i }
+                Some(_x) => x_rev += i,
             }
         }
-        
+
         match x_rev.checked_mul(sign) {
-                None => 0,
-                Some(_x) => x_rev * sign
+            None => 0,
+            Some(_x) => x_rev * sign,
         }
     }
 }
