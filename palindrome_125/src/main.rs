@@ -8,7 +8,7 @@ impl Solution {
     pub fn is_palindrome(s: String) -> bool {
         let s_chars: Vec<char> = s.to_lowercase().chars().collect();
         let (mut i, mut j) = (0, s_chars.len() - 1);
-        while i <= j && i < s_chars.len() && i < s_chars.len()  {
+        while i <= j && i < s_chars.len() && j > 0 {
             if !s_chars[i].is_ascii_alphanumeric() {
                 i += 1;
                 continue;
