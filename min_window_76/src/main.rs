@@ -5,7 +5,8 @@ fn main() {
 struct Solution;
 
 impl Solution {
-    // with help from https://leetcode.com/problems/minimum-window-substring/solutions/2732150/python-rust-c-fast-concise-using-two-pointer-sliding-window-with-detailed-comments
+    // with help from stanislav-iablokov:
+    //  https://leetcode.com/problems/minimum-window-substring/solutions/2732150/python-rust-c-fast-concise-using-two-pointer-sliding-window-with-detailed-comments
     pub fn min_window(s: String, t: String) -> String {
         let mut ans = String::from("");
         let mut freqs = std::collections::HashMap::new();
