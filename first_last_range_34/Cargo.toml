@@ -1,0 +1,6 @@
+[package]
+name = "first_last_range_34"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
