@@ -23,11 +23,30 @@ impl Solution {
             map.entry(freqs(i.to_string())).or_insert(vec![]) .push(i.to_string());
         }
 
-        for g in map.iter() {
-            println!("{:?}", g.1);
-            ans.push(g.1.to_vec());
-        }
+        map.into_values().collect()
+    }
+}
 
-        ans
+#[cfg(test)]
+pub mod test {
+    use super::*;
+
+    #[test]
+    fn test_group_anagrams() {
+        assert_eq!(
+            Solution::group_anagrams(vec![
+                "eat".to_string(),
+                "tea".into(),
+                "tan".into(),
+                "ate".into(),
+                "nat".into(),
+                "bat".into()
+            ]),
+            vec![
+                vec!["bat".to_string()],
+                vec!["nat".to_string(), "tan".into()],
+                vec!["ate".to_string(), "eat".into(), "tea".into()]
+            ]
+        );
     }
 }
