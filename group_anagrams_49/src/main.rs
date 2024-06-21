@@ -16,11 +16,13 @@ impl Solution {
             v_s
         }
 
-        let mut ans: Vec<Vec<String>> = vec![];
-        let mut map: std::collections::HashMap<Vec<u8>, Vec<String>> = std::collections::HashMap::new();
+        let mut map: std::collections::HashMap<Vec<u8>, Vec<String>> =
+            std::collections::HashMap::new();
 
         for i in strs.iter() {
-            map.entry(freqs(i.to_string())).or_insert(vec![]) .push(i.to_string());
+            map.entry(freqs(i.to_string()))
+                .or_insert(vec![])
+                .push(i.to_string());
         }
 
         map.into_values().collect()
