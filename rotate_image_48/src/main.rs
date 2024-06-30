@@ -14,9 +14,7 @@ impl Solution {
         let mut end = 0;
         while start > 0 {
             for i in 0..=start {
-                let temp = matrix[start - i][end];
-                matrix[start - i][end] = matrix[start][end + i];
-                matrix[start][end + i] = temp;
+                (matrix[start-i][end], matrix[start][end+i]) = (matrix[start][end+i], matrix[start-i][end]);
             }
             start -= 1;
             end += 1;
