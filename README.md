@@ -1,3 +1,3 @@
 # leetcode-rs
 
-Get familiar with Crate std. 
+Get familiar with The Rust Standard Library.
