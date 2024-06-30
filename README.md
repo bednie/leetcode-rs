@@ -1,3 +1,3 @@
 # leetcode-rs
 
-Rust practice.
+Get familiar with Crate std. 
