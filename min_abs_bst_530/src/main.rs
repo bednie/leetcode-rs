@@ -42,10 +42,8 @@ impl Solution {
 
         let (mut min, mut left, mut right) = (i32::MAX, 0, v.len() - 1);
         while left < right {
-            min = std::cmp::min(min, v[right] - v[right - 1]);
             min = std::cmp::min(min, v[left + 1] - v[left]);
             left += 1;
-            right -= 1;
         }
         min
     }
