@@ -2,6 +2,8 @@ fn main() {
     println!("Hello, world!");
 }
 
+const DIRS: [(i32, i32); 4] = [(-1, 0), (1, 0), (0, 1), (0, -1)];
+
 #[derive(Default, Debug)]
 struct Trie {
     is_end: bool,
@@ -47,12 +49,12 @@ impl Solution {
                 return;
             }
 
-            let dirs = vec![(-1, 0), (1, 0), (0, 1), (0, -1)];
             let (i, j) = (i as usize, j as usize);
 
             // choose
             let c = board[i][j];
 
+            // explore
             let index = (c as u8 - b'a') as usize;
 
             if let Some(next) = &mut node.next[index] {
@@ -66,7 +68,7 @@ impl Solution {
 
                 board[i][j] = '{';
 
-                for (di, dj) in dirs.iter() {
+                for &(di, dj) in &DIRS {
                     search(
                         i as i32 + di,
                         j as i32 + dj,
