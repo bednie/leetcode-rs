@@ -109,7 +109,6 @@ impl Solution {
                 }
             }
         }
-
         results
     }
 }
@@ -136,7 +135,7 @@ pub mod test {
                     "rain".into()
                 ]
             ),
-            vec![String::from("oath"), String::from("eat")]
+            vec![String::from("oath"), "eat".into()]
         );
     }
 }
