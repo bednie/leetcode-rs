@@ -5,9 +5,9 @@ fn main() {
 struct Solution;
 
 impl Solution {
-    // Initially I wrote a solution (see Solution2) 
-    // to find the pivot and then binary search the 
-    // partition whose range contains the target, 
+    // Initially I wrote a solution (see Solution2)
+    // to find the pivot and then binary search the
+    // partition whose range contains the target,
     // but this solution from phistellar is a lot simpler:
     // https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/3879413/rust-go-python-binary-search
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
@@ -55,9 +55,9 @@ struct Solution2;
 
 impl Solution2 {
     pub fn find_min(nums: &Vec<i32>) -> i32 {
-        let (mut left, mut right, mut mid) = (0, nums.len() - 1, 0);
+        let (mut left, mut right) = (0, nums.len() - 1);
         while nums[left] > nums[right] {
-            mid = (left + right) / 2;
+            let mid = (left + right) / 2;
 
             if nums[mid] > nums[right] {
                 left = mid + 1;
@@ -68,7 +68,7 @@ impl Solution2 {
         return left as i32;
     }
 
-    pub fn binary_search(mut left: i32, mut right: i32, nums: &Vec<i32>, target: i32) -> i32 {
+    pub fn binary_search(left: i32, right: i32, nums: &Vec<i32>, target: i32) -> i32 {
         while left <= right {
             let mid = (left + right) / 2;
 
