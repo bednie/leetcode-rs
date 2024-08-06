@@ -54,7 +54,7 @@ impl Solution {
 struct Solution2;
 
 impl Solution2 {
-    pub fn find_min(nums: &Vec<i32>) -> usize {
+    pub fn find_min(nums: &Vec<i32>) -> i32 {
         let (mut left, mut right, mut mid) = (0, nums.len() - 1, 0);
         while nums[left] > nums[right] {
             mid = (left + right) / 2;
@@ -65,24 +65,20 @@ impl Solution2 {
                 right = mid;
             }
         }
-        return left;
+        return left as i32;
     }
 
-    pub fn binary_search(mut left: usize, mut right: usize, nums: &Vec<i32>, target: i32) -> i32 {
+    pub fn binary_search(mut left: i32, mut right: i32, nums: &Vec<i32>, target: i32) -> i32 {
         while left <= right {
             let mid = (left + right) / 2;
 
-            if mid > nums.len() {
-                return -1;
+            if nums[mid as usize] == target {
+                return mid;
             }
 
-            if nums[mid] == target {
-                return mid as i32;
-            }
-
-            if target >= nums[left] && target < nums[mid] {
+            if target >= nums[left as usize] && target < nums[mid as usize] {
                 return Self::binary_search(left, mid - 1, nums, target);
-            } else if target > nums[mid] && target <= nums[right] {
+            } else if target > nums[mid as usize] && target <= nums[right as usize] {
                 return Self::binary_search(mid + 1, right, nums, target);
             } else {
                 break;
@@ -93,18 +89,8 @@ impl Solution2 {
 
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
         let pivot = Self::find_min(&nums);
-        let (mut left, mut right) = (-1, -1);
-
-        if nums.len() == 1 {
-            if nums[0] == target {
-                return 0;
-            } else {
-                return -1;
-            }
-        }
-
-        left = Self::binary_search(0, pivot - 1, &nums, target);
-        right = Self::binary_search(pivot, nums.len() - 1, &nums, target);
+        let left = Self::binary_search(0, pivot - 1, &nums, target);
+        let right = Self::binary_search(pivot, nums.len() as i32 - 1, &nums, target);
 
         match (left > -1, right > -1) {
             (true, false) => return left,
