@@ -20,11 +20,10 @@ impl Solution {
         }
 
         let board = unravel(&board);
-        let mut deque = std::collections::VecDeque::from([(1usize, 0usize)]); // (pos, moves)
-        let mut visited = std::collections::HashSet::from([0usize]); // pos
+        let mut deque = std::collections::VecDeque::from([(1usize, 0i32)]); // (pos, moves)
+        let mut visited = std::collections::HashSet::from([1usize]); // pos
 
-        while !deque.is_empty() {
-            let (pos, moves) = deque.pop_front().unwrap();
+        while let Some((pos, moves)) = deque.pop_front() {
             for i in 1..=6 {
                 let mut next_pos = pos + i;
 
@@ -37,7 +36,7 @@ impl Solution {
                 }
 
                 if next_pos == board.len() - 1 {
-                    return moves as i32 + 1;
+                    return moves + 1;
                 }
 
                 if !visited.contains(&next_pos) {
