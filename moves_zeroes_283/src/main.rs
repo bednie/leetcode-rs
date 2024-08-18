@@ -1,5 +1,8 @@
 fn main() {
-    dbg!();
+    let mut v = vec![0, 1, 0, 3, 12];
+    Solution::move_zeroes(&mut v);
+    assert_eq!(v, vec![1, 3, 12, 0, 0]);
+    dbg!(v);
 }
 
 struct Solution;
@@ -13,7 +16,7 @@ impl Solution {
                 while j < nums.len() - 1 && nums[j] == 0 {
                     j += 1
                 }
-                (nums[i], nums[j]) = (nums[j], nums[i]);
+                nums.swap(i, j);
             }
             i += 1;
         }
@@ -23,11 +26,11 @@ impl Solution {
 #[cfg(test)]
 pub mod test {
     use super::*;
-    
+
     #[test]
     fn test_move_zeroes() {
-        let mut v = vec![0,1,0,3,12];
+        let mut v = vec![0, 1, 0, 3, 12];
         Solution::move_zeroes(&mut v);
-        assert_eq!(v, vec![1,3,12,0,0]);
+        assert_eq!(v, vec![1, 3, 12, 0, 0]);
     }
 }
