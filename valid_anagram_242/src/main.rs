@@ -34,4 +34,3 @@ pub mod test {
         assert!(Solution::is_anagram(String::from("anagram"), String::from("nagaram")));
     }
 }
-

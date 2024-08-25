@@ -56,5 +56,3 @@ impl Solution {
             start += w_len;
         }
         ans
-    }
-}

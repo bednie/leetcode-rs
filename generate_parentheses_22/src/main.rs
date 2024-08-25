@@ -1,9 +1,8 @@
-use core::str;
 use std::time::{Duration, Instant};
 
 fn main() { 
     let start: Instant = Instant::now();
-    let n = 5; 
+    let n = 15; 
     Solution::generate_parenthesis(n);
     let duration: Duration = start.elapsed();
     println!("Time elapsed to generate {} pairs of () is: {:?}", n, duration);

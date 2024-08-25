@@ -1,5 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    println!("{:32b}",i32::MAX);
 }
 
 struct Solution;

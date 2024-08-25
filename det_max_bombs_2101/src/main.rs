@@ -52,7 +52,7 @@ impl Solution {
             }
             dag.insert(i as i32, connected);
         }
-
+        
         let mut max_bombs = 0;
         for i in 0..bombs.len() {
             let mut seen = vec![];
