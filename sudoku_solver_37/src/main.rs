@@ -59,6 +59,7 @@ impl Solution {
         }
 
         fn backtrack(row: usize, col: usize, board: &mut Vec<Vec<char>>) -> bool {
+            
             if col > 8 {
                 return backtrack(row + 1, 0, board);
             }
