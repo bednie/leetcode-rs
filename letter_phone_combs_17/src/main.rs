@@ -29,22 +29,20 @@ impl Solution {
             }
 
             m.get(&digits[idx]).unwrap().iter().for_each(|d: &char| {
-                if *d != '.' {
-                    letters.push(*d);
-                    backtrack(digits, idx + 1, length, letters, result, m);
-                    letters.pop();
-                }
+                letters.push(*d);
+                backtrack(digits, idx + 1, length, letters, result, m);
+                letters.pop();
             });
         }
 
         let m: HashMap<char, Vec<char>> = HashMap::from([
-            ('2', vec!['a', 'b', 'c', '.']),
-            ('3', vec!['d', 'e', 'f', '.']),
-            ('4', vec!['g', 'h', 'i', '.']),
-            ('5', vec!['j', 'k', 'l', '.']),
-            ('6', vec!['m', 'n', 'o', '.']),
+            ('2', vec!['a', 'b', 'c']),
+            ('3', vec!['d', 'e', 'f']),
+            ('4', vec!['g', 'h', 'i']),
+            ('5', vec!['j', 'k', 'l']),
+            ('6', vec!['m', 'n', 'o']),
             ('7', vec!['p', 'q', 'r', 's']),
-            ('8', vec!['t', 'u', 'v', '.']),
+            ('8', vec!['t', 'u', 'v']),
             ('9', vec!['w', 'x', 'y', 'z']),
         ]);
 
