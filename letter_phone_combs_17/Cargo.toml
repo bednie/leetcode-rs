@@ -1,0 +1,7 @@
+[package]
+name = "letter_phone_combs_17"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+stringvec = "0.1.0"
