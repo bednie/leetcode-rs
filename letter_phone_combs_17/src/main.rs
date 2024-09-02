@@ -1,7 +1,6 @@
 fn main() {
     let a: Vec<String> = Solution::letter_combinations(String::from("23"));
-    let b: Vec<String> =
-        stringvec::stringvec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"];
+    let b: Vec<String> = stringvec::stringvec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"];
     dbg!(a == b);
 }
 
@@ -60,13 +59,12 @@ impl Solution {
 #[cfg(test)]
 pub mod test {
     use super::*;
-    use stringvec::stringvec;
 
     #[test]
     fn test_letter_combinations() {
         assert_eq!(
             Solution::letter_combinations(String::from("23")),
-            stringvec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+            vec!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
         );
     }
 }
