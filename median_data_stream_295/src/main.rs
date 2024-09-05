@@ -44,12 +44,13 @@ impl MedianFinder {
     fn find_median(&self) -> f64 {
         if self.max_heap.len() > self.min_heap.len() {
             if let Some(&x) = self.max_heap.peek() {
-                return x as f64;
+                x as f64
             } else {
                 return self.min_heap.peek().unwrap().0 as f64;
             }
         } else {
-            return (*self.max_heap.peek().unwrap() as f64 + self.min_heap.peek().unwrap().0 as f64)
+            return (*self.max_heap.peek().unwrap() as f64
+                + self.min_heap.peek().unwrap().0 as f64)
                 / 2_f64;
         }
     }
