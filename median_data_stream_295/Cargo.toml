@@ -1,0 +1,6 @@
+[package]
+name = "median_data_stream_295"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
