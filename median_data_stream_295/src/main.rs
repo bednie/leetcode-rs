@@ -1,3 +1,6 @@
+// With help from this solution by user 101leetcode:
+// https://leetcode.com/problems/find-median-from-data-stream/solutions/696658/python-logic-explained-with-2-heaps-clean-code
+
 fn main() {
     let mut obj = MedianFinder::new();
     obj.add_num(1);
