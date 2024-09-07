@@ -1,3 +1,7 @@
+// With help from:
+// SalvadorDali: https://leetcode.com/problems/find-k-pairs-with-smallest-sums/solutions/3701758/rust-python-heap-with-explanation
+// williamcs: https://leetcode.com/problems/find-k-pairs-with-smallest-sums/solutions/3687915/rust-heap-solution
+
 use std::collections::BinaryHeap;
 
 fn main() {
