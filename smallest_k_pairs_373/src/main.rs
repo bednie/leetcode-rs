@@ -15,6 +15,10 @@ impl Solution {
         let mut min_heap: BinaryHeap<(i32, usize, usize)> = BinaryHeap::new();
         let mut result: Vec<Vec<i32>> = vec![];
 
+        // think of the pairs as a table.
+        // by first going right (along nums1, filling in the first row), 
+        // and then going down or down + right, we don't need to worry 
+        // about hitting the same pair of indices more than once.
         (0..nums1.len()).for_each(|x| min_heap.push((-(nums1[x] + nums2[0]), x, 0)));
 
         while let (Some((_, i, j)), true) = (min_heap.pop(), result.len() < k as usize) {
