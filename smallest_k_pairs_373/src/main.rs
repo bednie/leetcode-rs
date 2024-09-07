@@ -13,13 +13,10 @@ impl Solution {
 
         (0..nums1.len()).for_each(|x| min_heap.push((-(nums1[x] + nums2[0]), x, 0)));
 
-        for _n in 0..k as usize {
-            if let Some((_, i, j)) = min_heap.pop() {
-                result.push(vec![nums1[i], nums2[j]]);
-
-                if j + 1 < nums2.len() {
-                    min_heap.push((-(nums1[i] + nums2[j + 1]), i, j + 1));
-                }
+        while let (Some((_, i, j)), true) = (min_heap.pop(), result.len() < k as usize) {
+            result.push(vec![nums1[i], nums2[j]]);
+            if j + 1 < nums2.len() {
+                min_heap.push((-(nums1[i] + nums2[j + 1]), i, j + 1));
             }
         }
         result
