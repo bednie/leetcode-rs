@@ -1,0 +1,7 @@
+[package]
+name = "consistent_strings_1684"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+stringvec = "0.1.0"
