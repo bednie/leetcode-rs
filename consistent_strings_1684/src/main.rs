@@ -1,4 +1,3 @@
-use std::collections::HashSet;
 use stringvec::stringvec as sv;
 
 fn main() {
@@ -12,18 +11,17 @@ struct Solution;
 
 impl Solution {
     pub fn count_consistent_strings(allowed: String, words: Vec<String>) -> i32 {
-        let allowed: HashSet<char> = allowed.chars().collect();
-        let mut result = 0;
+        let allowed: usize = allowed
+            .chars()
+            .fold(0, |acc, c| acc | 1 << (c as u8 - b'a'));
 
-        'outer: for word in words {
-            for w in word.chars() {
-                if !allowed.contains(&w) {
-                    continue 'outer;
-                }
+        words.iter().fold(0, |count, word| {
+            if allowed | word.chars().fold(0, |acc, c| acc | 1 << (c as u8 - b'a')) <= allowed {
+                count + 1
+            } else {
+                count
             }
-            result += 1;
-        }
-        result
+        })
     }
 }
 
