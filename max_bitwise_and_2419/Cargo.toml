@@ -1,0 +1,6 @@
+[package]
+name = "max_bitwise_and_2419"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
