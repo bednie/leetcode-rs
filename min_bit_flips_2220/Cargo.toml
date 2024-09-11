@@ -1,0 +1,6 @@
+[package]
+name = "min_bit_flips_2220"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
