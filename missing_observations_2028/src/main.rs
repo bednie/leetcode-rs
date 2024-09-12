@@ -28,14 +28,14 @@ impl Solution {
         #[allow(clippy::needless_range_loop)]
         for i in 0..n as usize {
             if current_sum / (n + rolls.len() as i32) == mean {
-                break;
+                return complement;
             }
 
             let distance = mean - (current_sum / (n + rolls.len() as i32));
             current_sum += distance;
             complement[i] += distance;
         }
-        complement
+        vec![]
     }
 }
 
