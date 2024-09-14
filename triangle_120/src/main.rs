@@ -14,13 +14,11 @@ impl Solution {
         let mut triangle = triangle;
 
         for row in 1..triangle.len() {
-            for i in 0..triangle[row].len() {
-                if i == 0 {
-                    triangle[row][i] += triangle[row - 1][0];
-                } else {
-                    triangle[row][i] += triangle[row - 1][(i - 1).min(triangle[row - 1].len() - 1)]
-                        .min(triangle[row - 1][i.min(triangle[row - 1].len() - 1)]);
-                }
+            triangle[row][0] += triangle[row - 1][0];
+
+            for i in 1..triangle[row].len() {
+                triangle[row][i] += triangle[row - 1][(i - 1).min(triangle[row - 1].len() - 1)]
+                    .min(triangle[row - 1][i.min(triangle[row - 1].len() - 1)]);
             }
         }
         *triangle[triangle.len() - 1].iter().min().unwrap()
