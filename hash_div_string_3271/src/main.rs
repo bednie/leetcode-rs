@@ -7,15 +7,13 @@ struct Solution;
 impl Solution {
     pub fn string_hash(s: String, k: i32) -> String {
         let mut result: String = String::from("");
-        let s: std::slice::Chunks<'_, u8> = s.as_bytes().chunks(k as usize);
-
-        for chunk in s {
+        s.as_bytes().chunks(k as usize).for_each(|s: &[u8]| {
             let mut h: u32 = 0;
-            for c in chunk.iter() {
+            s.iter().for_each(|c: &u8| {
                 h += (c - b'a') as u32;
-            }
+            });
             result.push(char::from_u32(h % 26 + b'a' as u32).unwrap());
-        }
+        });
         result
     }
 }
