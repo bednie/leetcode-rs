@@ -7,9 +7,9 @@ struct Solution;
 impl Solution {
     pub fn string_hash(s: String, k: i32) -> String {
         let mut result: String = String::from("");
-        let mut s: std::slice::Chunks<'_, u8> = s.as_bytes().chunks(k as usize);
+        let s: std::slice::Chunks<'_, u8> = s.as_bytes().chunks(k as usize);
 
-        while let Some(chunk) = s.next() {
+        for chunk in s {
             let mut h: u32 = 0;
             for c in chunk.iter() {
                 h += (c - b'a') as u32;
