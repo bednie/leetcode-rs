@@ -6,20 +6,15 @@ struct Solution;
 
 impl Solution {
     pub fn string_hash(s: String, k: i32) -> String {
-        let mut result = String::from("");
-        let mut start = 0 as usize;
-        let mut end = k as usize;
+        let mut result: String = String::from("");
+        let mut s: std::slice::Chunks<'_, u8> = s.as_bytes().chunks(k as usize);
 
-        while end <= s.len() {
-            let mut h = 0_u32;
-            let sub = &s[start..end];
-            for c in sub.chars() {
-                h += c as u32 - b'a' as u32;
+        while let Some(chunk) = s.next() {
+            let mut h: u32 = 0;
+            for c in chunk.iter() {
+                h += (c - b'a') as u32;
             }
-
-            result.push((h % 26 + b'a' as u32) as u8 as char);
-            start = end;
-            end += k as usize;
+            result.push(char::from_u32(h % 26 + b'a' as u32).unwrap());
         }
         result
     }
