@@ -6,10 +6,20 @@ struct Solution;
 
 impl Solution {
     pub fn convert_date_to_binary(date: String) -> String {
-        let y = &date[..4].parse::<usize>().unwrap();
-        let m = &date[5..7].parse::<usize>().unwrap();
-        let d = &date[8..].parse::<usize>().unwrap();
-        format!("{y:b}-{m:b}-{d:b}")
+        match date[..4].parse::<u16>() {
+            Ok(year) => {
+                match date[5..7].parse::<u8>() {
+                    Ok(month) => {
+                        match date[8..].parse::<u8>() {
+                            Ok(day) => format!("{year:b}-{month:b}-{day:b}"),
+                            Err(_e) => format!("{_e}")
+                        }
+                    }
+                    Err(_e) => format!("{_e}")
+                }   
+            }
+            Err(_e) => format!("{_e}")
+        }
     }
 }
 
