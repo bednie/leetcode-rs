@@ -4,12 +4,21 @@ fn main() {
 
 struct Solution;
 
+// impl Solution {
+//     pub fn contains_duplicate(nums: Vec<i32>) -> bool {
+//         let mut n = nums.clone();
+//         n.sort_unstable();
+//         n.dedup();
+//         n.len() != nums.len()
+//     }
+// }
+
 impl Solution {
     pub fn contains_duplicate(nums: Vec<i32>) -> bool {
-        let mut n = nums.clone();
-        n.sort_unstable();
-        n.dedup();
-        n.len() != nums.len()
+        let mut s =  std::collections::HashSet::new();
+        nums.into_iter().any(|n| {
+            !s.insert(n)
+        })
     }
 }
 
