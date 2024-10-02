@@ -9,9 +9,9 @@ impl Solution {
         let mut triangle: Vec<Vec<i32>> = vec![vec![1]];
 
         for row in 1..=row_index as usize {
-            let mut new_row = vec![1; triangle[row - 1].len() + 1];
+            let mut new_row = vec![1; row + 1];
 
-            for r in 1..triangle[row - 1].len() {
+            for r in 1..row {
                 new_row[r] = triangle[row - 1][r - 1] + triangle[row - 1][r];
             }
 
