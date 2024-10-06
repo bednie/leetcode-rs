@@ -4,7 +4,6 @@ fn main() {
 
 struct Solution;
 
-
 impl Solution {
     pub fn min_add_to_make_valid(s: String) -> i32 {
         let mut unclosed: i32 = 0;
