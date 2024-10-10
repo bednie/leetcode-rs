@@ -1,0 +1,6 @@
+[package]
+name = "mean_remove_elements_1619"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
