@@ -1,0 +1,6 @@
+[package]
+name = "sum_k_set_bits_2859"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
