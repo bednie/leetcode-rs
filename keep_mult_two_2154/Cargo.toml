@@ -1,0 +1,6 @@
+[package]
+name = "keep_mult_two_2154"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
