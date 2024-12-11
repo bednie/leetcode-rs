@@ -1,0 +1,6 @@
+[package]
+name = "check_row_col_all_nums_2133"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
