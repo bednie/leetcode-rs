@@ -22,4 +22,11 @@ pub mod test {
         Solution::sort_colors(&mut v);
         assert_eq!(v, vec![0, 0, 1, 1, 2, 2]);
     }
+
+    #[test]
+    fn test_sort_colors_2() {
+        let mut v = vec![3, 0, 2, 1, 1, 0];
+        Solution::sort_colors(&mut v);
+        assert_ne!(v, vec![0, 0, 1, 1, 2, 2]);
+    }
 }
