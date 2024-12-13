@@ -1,6 +1,6 @@
 fn main() {
     let mut v: Vec<i32> = vec![2, 0, 2, 1, 1, 0];
-    dbg!(Solution::sort_colors(&mut v));
+    Solution::sort_colors(&mut v);
     dbg!(v);
 }
 
