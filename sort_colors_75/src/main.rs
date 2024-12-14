@@ -10,7 +10,7 @@ impl Solution {
     pub fn sort_colors(nums: &mut Vec<i32>) {
         let mut start = 0;
         let mut end = nums.len() - 1;
-
+        
         for idx in 0..nums.len() {
             if nums[idx] == 0 {
                 nums.swap(idx, start);
@@ -19,6 +19,10 @@ impl Solution {
         }
 
         for idx in (0..nums.len()).rev() {
+            if idx < start {
+                break;
+            }
+
             if nums[idx] == 2 {
                 nums.swap(idx, end);
                 end -= 1;
