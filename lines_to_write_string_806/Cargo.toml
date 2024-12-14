@@ -1,0 +1,6 @@
+[package]
+name = "lines_to_write_string_806"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
