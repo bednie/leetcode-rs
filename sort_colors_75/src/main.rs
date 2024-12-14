@@ -7,8 +7,23 @@ fn main() {
 struct Solution;
 
 impl Solution {
-    pub fn sort_colors(nums: &mut [i32]) {
-        nums.sort_unstable()
+    pub fn sort_colors(nums: &mut Vec<i32>) {
+        let mut start = 0;
+        let mut end = nums.len() - 1;
+
+        for idx in 0..nums.len() {
+            if nums[idx] == 0 {
+                nums.swap(idx, start);
+                start += 1;
+            }
+        }
+
+        for idx in (0..nums.len()).rev() {
+            if nums[idx] == 2 {
+                nums.swap(idx, end);
+                end -= 1;
+            }
+        }
     }
 }
 
