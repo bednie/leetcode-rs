@@ -1,5 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    dbg!(Solution::search(vec![2, 5, 6, 0, 0, 1, 2], 0));
 }
 
 struct Solution;
@@ -30,7 +30,7 @@ pub mod test {
 
     #[test]
     fn test_search() {
-        assert!(Solution::search(vec![2,5,6,0,0,1,2], 0));
-        assert!(!Solution::search(vec![2,5,6,0,0,1,2], 3));
+        assert!(Solution::search(vec![2, 5, 6, 0, 0, 1, 2], 0));
+        assert!(!Solution::search(vec![2, 5, 6, 0, 0, 1, 2], 3));
     }
 }
