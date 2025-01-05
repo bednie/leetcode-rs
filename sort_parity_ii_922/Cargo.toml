@@ -1,0 +1,6 @@
+[package]
+name = "sort_parity_ii_922"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
