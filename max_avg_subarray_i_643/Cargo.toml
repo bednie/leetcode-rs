@@ -1,0 +1,6 @@
+[package]
+name = "max_avg_subarray_i_643"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
