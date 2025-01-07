@@ -1,0 +1,6 @@
+[package]
+name = "continuous_subarray_sum_523"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
