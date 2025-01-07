@@ -6,14 +6,15 @@ struct Solution;
 
 impl Solution {
     pub fn check_subarray_sum(nums: Vec<i32>, k: i32) -> bool {
-        let mut v = vec![0];
+        let mut p = 0;
         let mut s = std::collections::HashSet::new();
 
-        for (idx, n) in nums.iter().enumerate() {
-            let m = (n + v[idx]) % k;
-            v.push(m);
+        for n in nums {
+            let m: i32 = (n + p) % k;
+
             if !s.contains(&m) {
-                s.insert(v[idx]);
+                s.insert(p);
+                p = m;
             } else {
                 return true;
             }
