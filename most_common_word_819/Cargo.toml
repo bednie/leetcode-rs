@@ -1,0 +1,6 @@
+[package]
+name = "most_common_word_819"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
