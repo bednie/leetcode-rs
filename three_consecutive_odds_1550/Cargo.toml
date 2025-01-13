@@ -1,0 +1,6 @@
+[package]
+name = "three_consecutive_odds_1550"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
