@@ -1,0 +1,6 @@
+[package]
+name = "captures_for_rook_999"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
