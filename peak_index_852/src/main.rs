@@ -9,7 +9,6 @@ impl Solution {
         let arr_idx: Vec<(usize, i32)> = arr
             .into_iter()
             .enumerate()
-            .map(|(idx, n)| (idx, n))
             .collect();
         let mut left = 0;
         let mut right = arr_idx.len();
