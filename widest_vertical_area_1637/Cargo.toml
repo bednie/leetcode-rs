@@ -1,0 +1,6 @@
+[package]
+name = "widest_vertical_area_1637"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
