@@ -1,5 +1,5 @@
 fn main() {
-    dbg!(Solution::odd_cells(2, 3, vec![vec![0,1],vec![1,1]]));
+    dbg!(Solution::odd_cells(2, 3, vec![vec![0, 1], vec![1, 1]]));
 }
 
 struct Solution;
@@ -43,9 +43,6 @@ pub mod test {
 
     #[test]
     fn test_odd_cells() {
-        assert_eq!(
-            Solution::odd_cells(2, 3, vec![vec![0,1],vec![1,1]]),
-            6
-        );
+        assert_eq!(Solution::odd_cells(2, 3, vec![vec![0, 1], vec![1, 1]]), 6);
     }
 }
