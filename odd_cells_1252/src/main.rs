@@ -1,5 +1,5 @@
 fn main() {
-    dbg!();
+    dbg!(Solution::odd_cells(2, 3, vec![vec![0,1],vec![1,1]]));
 }
 
 struct Solution;
