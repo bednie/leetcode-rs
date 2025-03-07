@@ -15,14 +15,12 @@ fn branchless_sign(nums: &Vec<i32>) -> i32 {
 
 // A more traditional branching implementation
 fn branching_sign(nums: &Vec<i32>) -> i32 {
+    let mut negative_count = 0;
     for n in nums {
         if *n == 0 {
             return 0;
         }
-    }
-
-    let mut negative_count = 0;
-    for n in nums {
+        
         if *n < 0 {
             negative_count += 1;
         }
