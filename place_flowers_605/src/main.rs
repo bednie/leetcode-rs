@@ -22,15 +22,15 @@ struct Solution;
 
 impl Solution {
     pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
-        let mut iter = [0].iter().chain(flowerbed.iter()).chain(&[0, 1]);
+        let iter = std::iter::once(&0).chain(flowerbed.iter().chain(&[0, 1]));
         let mut places = 0;
         let mut zeros = 0;
 
-        while let Some(&plot) = iter.next() {
+        for &plot in iter {
             if plot == 0 {
                 zeros += 1;
             } else {
-                places += (zeros - 1) / 2;
+                places += (zeros - 1) / 2; 
                 zeros = 0;
             }
         }
