@@ -22,15 +22,15 @@ impl Solution {
                     q.push((row as i32, col as i32));
 
                     while let Some(p) = q.pop() {
-                        let (i, j) = p;
-
                         for d in [1, 0, -1, 0, 1].windows(2) {
-                            if (i + d[0] >= 0 && i + d[0] < board.len() as i32)
-                                && (j + d[1] >= 0 && j + d[1] < board[0].len() as i32)
-                                && board[(i + d[0]) as usize][(j + d[1]) as usize] == 'X'
+                            let (i, j) = (p.0 + d[0], p.1 + d[1]);
+                            
+                            if (i >= 0 && i < board.len() as i32)
+                                && (j >= 0 && j < board[0].len() as i32)
+                                && board[i as usize][j as usize] == 'X'
                             {
-                                board[(i + d[0]) as usize][(j + d[1]) as usize] = '.';
-                                q.push((i + d[0], j + d[1]));
+                                board[i as usize][j as usize] = '.';
+                                q.push((i, j));
                             }
                         }
                     }
